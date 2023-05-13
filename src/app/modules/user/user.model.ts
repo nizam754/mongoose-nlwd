@@ -62,3 +62,5 @@ import { Schema, model } from "mongoose";
       //Create a Model.
     
     const User = model<IUser>("User", userSchema);
+
+    export default User;
