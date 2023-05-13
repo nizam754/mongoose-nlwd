@@ -1,8 +1,9 @@
+import { getUser } from './user.controller';
 import User from "./user.model";
 
 export const createUserToDB=async ()=> {
     const user = await new User({
-        id: "802",
+        id: "803",
         role: "student",
         password: 'mypassword',
         name: {
@@ -20,3 +21,8 @@ export const createUserToDB=async ()=> {
       await user.save();
       return user;
     };
+
+    export const getUsersFromDB= async ()=> {
+        const users = await User.find();
+        return users;
+    }
