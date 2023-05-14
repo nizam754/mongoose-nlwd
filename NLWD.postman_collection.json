@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "f9e3a746-0317-4187-a029-d6ea14454c39",
+		"name": "NLWD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5137792"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"804\",\r\n    \"role\": \"admin\",\r\n    \"password\": \"mypassword\",\r\n    \"name\": {\r\n        \"firstName\": \"John\",\r\n        \"middleName\": \"Wick\",\r\n        \"lastName\": \"4\"\r\n    },\r\n    \"gender\": \"male\",\r\n    \"email\": \"abc@gmail.com\",\r\n    \"contactNo\": \"01265896658\",\r\n    \"emergencyContactNo\": \"01236548965\",\r\n    \"presentAddress\": \"Dhaka\",\r\n    \"permanentAddress\": \"KSA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user/create-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
