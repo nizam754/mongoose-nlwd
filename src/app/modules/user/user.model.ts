@@ -1,9 +1,10 @@
-import { IUser } from './user.interface';
+import { IUser, IUserMethods } from './user.interface';
 // Creating schema using interface
 
-import { Schema, model } from "mongoose";
+import { Model, Schema, model } from "mongoose";
+type UserModel = Model<IUser, {}, IUserMethods>;
 
-    const userSchema = new Schema<IUser>({
+    const userSchema = new Schema<IUser, UserModel, IUserMethods>({
         id: {
             type: String,
             required: true,
@@ -58,9 +59,16 @@ import { Schema, model } from "mongoose";
             required: true
         }
       });
+
+      userSchema.method('fullName', function fullName() {
+        return this.name.firstName + ' ' + this.name.lastName;
+      });
     
       //Create a Model.
     
-    const User = model<IUser>("User", userSchema);
+    const User = model<IUser, UserModel>("User", userSchema);
 
     export default User;
+
+    // instance methods --> instance er methods
+    // class -> instance + methods -> instance methods
