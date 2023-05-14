@@ -21,7 +21,11 @@ export const createUserToDB=async (payload:IUser):Promise<IUser> => {
         return user;
     };
 
-    export const getAdminUsersFromDB = async(payload:string): Promise<IUser | null>=> {
-        const user1 = new User() // static user
+    export const getAdminUsersFromDB = async()=> {
+        const admins = await User.getAdminUsers();
+        console.log(admins);
+        return admins;
     };
     
+
+    //Class -> Attach -> Method -> Directly call using Class
