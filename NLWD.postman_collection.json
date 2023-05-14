@@ -28,13 +28,13 @@
 			"response": []
 		},
 		{
-			"name": "Add users",
+			"name": "Create users",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"804\",\r\n    \"role\": \"admin\",\r\n    \"password\": \"mypassword\",\r\n    \"name\": {\r\n        \"firstName\": \"John\",\r\n        \"middleName\": \"Wick\",\r\n        \"lastName\": \"4\"\r\n    },\r\n    \"gender\": \"male\",\r\n    \"email\": \"abc@gmail.com\",\r\n    \"contactNo\": \"01265896658\",\r\n    \"emergencyContactNo\": \"01236548965\",\r\n    \"presentAddress\": \"Dhaka\",\r\n    \"permanentAddress\": \"KSA\"\r\n}",
+					"raw": "{\r\n    \"id\": \"805\",\r\n    \"role\": \"admin\",\r\n    \"password\": \"mypassword\",\r\n    \"name\": {\r\n        \"firstName\": \"John\",\r\n        \"middleName\": \"Wick\",\r\n        \"lastName\": \"Sina\"\r\n    },\r\n    \"gender\": \"male\",\r\n    \"email\": \"abc@gmail.com\",\r\n    \"contactNo\": \"01265896658\",\r\n    \"emergencyContactNo\": \"01236548965\",\r\n    \"presentAddress\": \"Dhaka\",\r\n    \"permanentAddress\": \"KSA\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -53,6 +53,50 @@
 						"v1",
 						"user",
 						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user/777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"777"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdmin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/user/admins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"admins"
 					]
 				}
 			},
